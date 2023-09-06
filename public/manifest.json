@@ -1,0 +1,22 @@
+{
+  "short_name": "React-Boilerplate",
+  "name": "React Boilerplate (Replace with Your Application Name)",
+  "description": "A React TS Boilerplate to serve as the skeleton for starting your projects without using CRA. (Replace with a brief description of your application instead)",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#000000"
+}

@@ -42,7 +42,7 @@ To fire up the development server, execute:
 ```
 npm run start
 ```
-This will launch the development server at http://localhost:8080. The server will hot-reload upon making any changes to the codebase.
+This will launch the development server at http://localhost:3000. The server will hot-reload upon making any changes to the codebase.
 
 
 ### Production Build
