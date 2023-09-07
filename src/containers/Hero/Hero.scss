@@ -1,0 +1,13 @@
+.hero-section-container {
+  background-color: blue;
+  padding: 2em 0;
+
+  .row {
+    align-items: center;
+  }
+
+  .col {
+    display: flex;
+    justify-content: center;
+  }
+}

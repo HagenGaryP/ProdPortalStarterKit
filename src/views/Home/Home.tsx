@@ -1,5 +1,6 @@
 import React from 'react';
 import Hero from '../../containers/Hero/Hero';
+import ContentSection from '../../containers/ContentSection/ContentSection';
 
 const Home: React.FC = () => {
 
@@ -7,6 +8,7 @@ const Home: React.FC = () => {
     <>
     {/* sections of the home page */}
     <Hero />
+    <ContentSection />
     </>
   );
 }
