@@ -1,0 +1,20 @@
+.content-section-container {
+  background-color: lightblue;
+  padding: 2em 0;
+
+  // temporary specifying height
+  height: 20em;
+
+  .row {
+    display: flex;
+    justify-content: center;
+
+    height: 100%; // remove this after content is added
+  }
+
+  .col {
+    display: flex;
+    justify-content: center;
+
+  }
+}
