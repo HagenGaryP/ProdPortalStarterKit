@@ -9,7 +9,7 @@ const Hero: React.FC = () => {
     <Container className="hero-section-container">
       <Row>
         <Col>
-          <h1 className="">Hero Header</h1>
+          <h1 className="hero-text-white">Hero Header</h1>
         </Col>
       </Row>
 
