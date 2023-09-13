@@ -3,22 +3,39 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
+  // add optimization as needed.
   entry: './src/index.tsx',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
     clean: true
   },
-  resolve: {
-    extensions: ['.tsx', '.ts', '.js', '.jsx'],
+  devtool: 'source-map', // or 'inline-source-map', 'eval-source-map', etc...
+  devServer: {
+    static: {
+      directory: path.join(__dirname, 'dist'),
+    },
+    compress: true,
+    port: 3000,
+    hot: true,
+    open: true,
+    historyApiFallback: true,
   },
   module: {
     rules: [
       {
-        test: /\.(ts|tsx)$/,
+        test: /\.(js|jsx|ts|tsx)$/,   // Matches .js, .jsx, .ts, and .tsx files
         exclude: /node_modules/,
         use: {
-          loader: 'ts-loader',
+          loader: 'babel-loader',
+          options: {
+            presets: [
+              ['@babel/preset-env', { "modules": false }],  // Transpile ES6+ to ES5
+              '@babel/preset-react',   // Handle React JSX
+              '@babel/preset-typescript' // Handle TypeScript
+            ]
+            // NOTE: The { "modules": false } option ensures that Babel doesn't transform ES6 modules, which is important for tree-shaking and HMR.
+          }
         },
       },
       {
@@ -39,20 +56,18 @@ module.exports = {
       },
     ],
   },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js', '.jsx'],
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: './public/index.html',
       filename: './index.html',
     }),
     new MiniCssExtractPlugin(),
+    /** OPTIONAL HMR plugin - requires additional code in react entry */
+    // new webpack.HotModuleReplacementPlugin({
+    //   title: 'Hot Module Replacement',
+    // }),
   ],
-  devServer: {
-    static: {
-      directory: path.join(__dirname, 'dist'),
-    },
-    compress: true,
-    port: 3000,
-    open: true,
-    historyApiFallback: true,
-  },
 };
