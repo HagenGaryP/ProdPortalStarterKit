@@ -1,9 +1,9 @@
-.product-card {
-  background-color: powderblue;
+#product-card {
   box-shadow: 0em 1em 1em rgba(0, 0, 0, 0.2);
   border-radius: 0.5em;
 
   &-title {
+    text-align: center;
     font-style: normal;
     font-weight: 700;
     font-size: 1.25em;

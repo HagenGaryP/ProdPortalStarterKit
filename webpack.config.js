@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
@@ -65,8 +66,6 @@ module.exports = {
     }),
     new MiniCssExtractPlugin(),
     /** OPTIONAL HMR plugin - requires additional code in react entry */
-    // new webpack.HotModuleReplacementPlugin({
-    //   title: 'Hot Module Replacement',
-    // }),
+    new webpack.HotModuleReplacementPlugin(), // might be redundant due to `hot: true` option in devServer
   ],
 };
