@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
@@ -25,7 +26,6 @@ module.exports = {
     rules: [
       {
         test: /\.(js|jsx|ts|tsx)$/,   // Matches .js, .jsx, .ts, and .tsx files
-        exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
           options: {
@@ -66,8 +66,6 @@ module.exports = {
     }),
     new MiniCssExtractPlugin(),
     /** OPTIONAL HMR plugin - requires additional code in react entry */
-    // new webpack.HotModuleReplacementPlugin({
-    //   title: 'Hot Module Replacement',
-    // }),
+    new webpack.HotModuleReplacementPlugin(), // might be redundant due to `hot: true` option in devServer
   ],
 };
