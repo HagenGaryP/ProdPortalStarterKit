@@ -1,0 +1,22 @@
+.product-card {
+  background-color: powderblue;
+  box-shadow: 0em 1em 1em rgba(0, 0, 0, 0.2);
+  border-radius: 0.5em;
+
+  &-title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.25em;
+    line-height: 1.25em;
+    color: darkblue;
+    text-decoration: underline;
+  }
+
+  &-text {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1em;
+    line-height: 1.25em;
+    color: gray;
+  }
+}

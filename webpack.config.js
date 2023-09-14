@@ -25,7 +25,6 @@ module.exports = {
     rules: [
       {
         test: /\.(js|jsx|ts|tsx)$/,   // Matches .js, .jsx, .ts, and .tsx files
-        exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
           options: {
